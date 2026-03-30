@@ -1,0 +1,53 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs / archives / temp files
+*.log
+*.sql
+*.sqlite
+*.zip
+*.tar
+*.tar.gz
+tmp/
+
+# Dependency and build output
+node_modules/
+vendor/
+dist/
+build/
+
+# Environment and machine-local config
+.env
+.env.*
+!.env.example
+.lando.local.yml
+
+# WordPress:
+# Ignore core and runtime-generated files by default so the repo focuses on custom project work.
+/wordpress/*
+!/wordpress/.gitkeep
+!/wordpress/wp-content/
+
+# Keep custom code directories available for version control.
+/wordpress/wp-content/*
+!/wordpress/wp-content/themes/
+!/wordpress/wp-content/plugins/
+
+# Ignore generated content inside wp-content.
+/wordpress/wp-content/uploads/
+/wordpress/wp-content/cache/
+/wordpress/wp-content/upgrade/
+/wordpress/wp-content/backup-db/
+/wordpress/wp-content/backups/
+/wordpress/wp-content/blogs.dir/
+/wordpress/wp-content/debug.log
+/wordpress/wp-content/advanced-cache.php
+/wordpress/wp-content/object-cache.php
+
+# Local WordPress configuration
+/wordpress/wp-config.php
