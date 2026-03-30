@@ -1,6 +1,6 @@
 # Silver Peak Home Services
 
-Portfolio-ready custom WordPress project for a local business website. This repository is set up for local development with Lando and Git, with WordPress installed in `/wordpress` and custom project work tracked separately from core files.
+Portfolio-ready custom WordPress project for a local business website. This repository is set up for local development with Lando and Git, with WordPress intended to live in `wordpress/` and custom project work tracked separately from core files.
 
 ## Project Overview
 
@@ -67,7 +67,7 @@ lando wp plugin list
 
 ## Development Notes
 
-- WordPress core is intended to live in `wordpress/`
+- WordPress core lives in `wordpress/`
 - Custom theme development will happen in `wordpress/wp-content/themes/`
 - The Git history is meant to reflect custom project work, not generated uploads, cache files, or WordPress core updates
 
@@ -78,11 +78,6 @@ git status
 git add .
 git commit -m "Add initial project setup"
 ```
-
-## Development Paths
-
-- WordPress lives in `/wordpress`
-- The custom theme will be developed in `/wordpress/wp-content/themes/silver-peak-theme`
 
 Suggested workflow:
 
