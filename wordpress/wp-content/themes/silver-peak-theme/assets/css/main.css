@@ -1,0 +1,238 @@
+:root {
+    --color-background: #f6f3ee;
+    --color-surface: #ffffff;
+    --color-text: #1f2933;
+    --color-muted: #52606d;
+    --color-border: #d9e2ec;
+    --color-accent: #1f6f78;
+    --color-accent-dark: #154f55;
+    --font-body: "Segoe UI", sans-serif;
+    --font-heading: Georgia, serif;
+    --container-width: 72rem;
+    --space-section: clamp(3.5rem, 6vw, 6rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: linear-gradient(180deg, #f6f3ee 0%, #ffffff 100%);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.16em;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--color-accent-dark);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.site-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    flex: 1;
+}
+
+.site-container {
+    width: min(100% - 2rem, var(--container-width));
+    margin: 0 auto;
+}
+
+.section-spacing {
+    padding-block: var(--space-section);
+}
+
+.content-narrow {
+    width: min(100%, 48rem);
+}
+
+.site-header,
+.site-footer {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner,
+.site-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1rem;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.site-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-description,
+.entry-meta,
+.site-footer__copy,
+.eyebrow {
+    color: var(--color-muted);
+}
+
+.site-description,
+.site-footer__copy,
+.entry-meta {
+    margin: 0;
+}
+
+.primary-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.primary-menu a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-intro,
+.entry-card,
+.entry-single,
+.home-section-placeholder,
+.search-form {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+}
+
+.page-intro,
+.entry-card,
+.entry-single,
+.home-section-placeholder {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.content-stack {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.entry-card__title,
+.entry-title,
+.page-intro h1 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+    line-height: 1.15;
+}
+
+.entry-card__title {
+    margin-bottom: 0.75rem;
+}
+
+.entry-card__content > :last-child,
+.entry-content > :last-child,
+.page-intro > :last-child {
+    margin-bottom: 0;
+}
+
+.home-section-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.search-field {
+    min-width: 0;
+    flex: 1;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+}
+
+.search-submit,
+.wp-element-button {
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 0.75rem 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .site-header__inner,
+    .site-footer__inner,
+    .site-branding,
+    .search-form {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .primary-menu {
+        flex-direction: column;
+    }
+}
