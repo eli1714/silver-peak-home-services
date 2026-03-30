@@ -31,6 +31,7 @@ function silver_peak_theme_setup(): void
 
     register_nav_menus([
         'primary' => __('Primary Menu', 'silver-peak-theme'),
+        'footer'  => __('Footer Menu', 'silver-peak-theme'),
     ]);
 }
 add_action('after_setup_theme', 'silver_peak_theme_setup');
@@ -69,3 +70,13 @@ function silver_peak_theme_body_classes(array $classes): array
     return $classes;
 }
 add_filter('body_class', 'silver_peak_theme_body_classes');
+
+function silver_peak_theme_menu_fallback(): void
+{
+    echo '<ul class="primary-menu primary-menu--fallback">';
+    echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'silver-peak-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/services')) . '">' . esc_html__('Services', 'silver-peak-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/about')) . '">' . esc_html__('About', 'silver-peak-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/contact')) . '">' . esc_html__('Contact', 'silver-peak-theme') . '</a></li>';
+    echo '</ul>';
+}
