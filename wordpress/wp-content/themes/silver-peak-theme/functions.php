@@ -71,6 +71,39 @@ function silver_peak_theme_body_classes(array $classes): array
 }
 add_filter('body_class', 'silver_peak_theme_body_classes');
 
+function silver_peak_theme_posted_on(): string
+{
+    $published = get_the_date();
+    $published_iso = get_the_date('c');
+    $author_url = get_author_posts_url((int) get_the_author_meta('ID'));
+    $author_name = get_the_author();
+
+    return sprintf(
+        '<span class="post-meta__item"><time datetime="%1$s">%2$s</time></span><span class="post-meta__item">%3$s <a href="%4$s">%5$s</a></span>',
+        esc_attr($published_iso),
+        esc_html($published),
+        esc_html__('By', 'silver-peak-theme'),
+        esc_url($author_url),
+        esc_html($author_name)
+    );
+}
+
+function silver_peak_theme_post_terms(string $taxonomy): string
+{
+    $terms = get_the_term_list(get_the_ID(), $taxonomy, '', ', ');
+
+    if (! $terms || is_wp_error($terms)) {
+        return '';
+    }
+
+    return sprintf(
+        '<div class="post-terms post-terms--%1$s"><span class="screen-reader-text">%2$s</span>%3$s</div>',
+        esc_attr($taxonomy),
+        esc_html($taxonomy === 'category' ? __('Categories', 'silver-peak-theme') : __('Tags', 'silver-peak-theme')),
+        wp_kses_post($terms)
+    );
+}
+
 function silver_peak_theme_get_service_page_data(): array
 {
     $defaults = [
