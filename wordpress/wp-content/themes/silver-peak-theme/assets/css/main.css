@@ -786,3 +786,116 @@ strong {
         align-items: center;
     }
 }
+
+
+/* Services pages */
+.services-overview-hero__content,
+.service-page,
+.service-area-note,
+.service-summary-card,
+.service-detail-card,
+.service-page__hero-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.services-overview-hero__content,
+.service-page,
+.service-summary-card,
+.service-detail-card,
+.service-page__hero-card,
+.service-area-note {
+    padding: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.services-grid,
+.service-detail-grid,
+.service-problem-list {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.service-summary-card,
+.service-detail-card {
+    display: grid;
+    align-content: start;
+    gap: var(--space-sm);
+}
+
+.service-summary-card h3,
+.service-detail-card h3,
+.service-problem-list li {
+    margin: 0;
+}
+
+.service-page__hero-layout {
+    display: grid;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.service-page__hero-content h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    max-width: 12ch;
+}
+
+.service-page__hero-lead {
+    max-width: 42rem;
+    font-size: 1.08rem;
+    color: var(--color-muted);
+}
+
+.service-page__intro {
+    width: min(100%, var(--content-narrow-width));
+}
+
+.service-problem-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.service-problem-list li {
+    position: relative;
+    padding: 1rem 1rem 1rem 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow-soft);
+}
+
+.service-problem-list li::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1.45rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+@media (min-width: 48rem) {
+    .services-grid,
+    .service-detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .services-grid,
+    .service-detail-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-page__hero-layout {
+        grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.85fr);
+        align-items: start;
+    }
+
+    .service-problem-list {
+        align-content: start;
+    }
+}
