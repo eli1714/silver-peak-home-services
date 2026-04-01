@@ -721,30 +721,72 @@ textarea:focus,
 /* Footer */
 .site-footer {
     border-top: 1px solid var(--color-border);
-    padding-block: var(--space-xl) var(--space-md);
+    padding-block: clamp(2.25rem, 6vw, 3.5rem) var(--space-md);
 }
 
 .site-footer__grid {
     display: grid;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    gap: 1.65rem;
+    margin-bottom: 1.65rem;
 }
 
 .site-footer__title {
     margin-top: 0;
-    margin-bottom: var(--space-xs);
+    margin-bottom: 0.65rem;
     font-size: 1.2rem;
+    letter-spacing: -0.02em;
 }
 
 .footer-menu,
 .site-footer__list {
     display: grid;
-    gap: var(--space-xs);
+    gap: 0.65rem;
 }
 
 .site-footer__bottom {
-    padding-top: var(--space-md);
+    padding-top: 1rem;
     border-top: 1px solid var(--color-border);
+}
+
+.site-footer__section {
+    display: grid;
+    align-content: start;
+    gap: 0.2rem;
+}
+
+.site-footer__text,
+.site-footer__list {
+    max-width: 34rem;
+}
+
+.site-footer__list a {
+    color: var(--color-accent-dark);
+}
+
+.site-footer__copy,
+.site-footer__credit {
+    font-size: 0.96rem;
+}
+
+@media (max-width: 47.99rem) {
+    .site-footer__grid {
+        gap: 1.4rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .site-footer__title {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-menu,
+    .site-footer__list {
+        gap: 0.55rem;
+    }
+
+    .site-footer__bottom {
+        display: grid;
+        gap: 0.5rem;
+    }
 }
 
 /* Shared lists and cards */
@@ -1249,6 +1291,7 @@ textarea:focus,
 
     .site-footer__grid {
         grid-template-columns: 1.2fr 0.8fr 0.9fr;
+        gap: 2rem;
     }
 
     .form-field--full {
