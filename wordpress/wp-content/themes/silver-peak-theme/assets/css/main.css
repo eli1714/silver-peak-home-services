@@ -650,6 +650,14 @@ textarea:focus,
     width: 100%;
 }
 
+.js-ready .primary-nav-wrap[hidden] {
+    display: none;
+}
+
+.js-ready .primary-nav-wrap {
+    margin-top: var(--space-xs);
+}
+
 /* Footer */
 .site-footer {
     border-top: 1px solid var(--color-border);
@@ -1199,6 +1207,7 @@ textarea:focus,
 
     .primary-nav-wrap {
         width: auto;
+        margin-top: 0;
         flex-direction: row;
         align-items: center;
     }

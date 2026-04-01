@@ -375,7 +375,7 @@ function silver_peak_theme_menu_fallback(): void
     echo '<ul class="primary-menu primary-menu--fallback">';
     echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'silver-peak-theme') . '</a></li>';
     echo '<li><a href="' . esc_url(home_url('/services')) . '">' . esc_html__('Services', 'silver-peak-theme') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/about')) . '">' . esc_html__('About', 'silver-peak-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/blog')) . '">' . esc_html__('Blog', 'silver-peak-theme') . '</a></li>';
     echo '<li><a href="' . esc_url(home_url('/contact')) . '">' . esc_html__('Contact', 'silver-peak-theme') . '</a></li>';
     echo '</ul>';
 }
