@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Silver Peak Theme Blog Placeholder</title>
+  <desc id="desc">A simple neutral placeholder image for the featured blog post area.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7f2ea"/>
+      <stop offset="100%" stop-color="#e8efe9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="120" y="120" width="1360" height="660" rx="28" fill="#ffffff" fill-opacity="0.72" stroke="#d9e0e7"/>
+  <path d="M240 610C360 460 480 420 610 470C710 508 792 576 912 582C1030 588 1110 522 1192 470C1266 424 1342 402 1430 426" fill="none" stroke="#155e63" stroke-opacity="0.18" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="474" cy="360" r="84" fill="#155e63" fill-opacity="0.1"/>
+  <circle cx="1118" cy="322" r="58" fill="#155e63" fill-opacity="0.08"/>
+</svg>

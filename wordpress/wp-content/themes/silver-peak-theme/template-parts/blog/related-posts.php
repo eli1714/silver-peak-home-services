@@ -9,7 +9,7 @@ $category_ids = wp_get_post_categories(get_the_ID());
 
 $related_query = new WP_Query([
     'post_type'           => 'post',
-    'posts_per_page'      => 3,
+    'posts_per_page'      => 2,
     'post__not_in'        => [get_the_ID()],
     'ignore_sticky_posts' => true,
     'category__in'        => $category_ids,
@@ -18,7 +18,7 @@ $related_query = new WP_Query([
 if (! $related_query->have_posts()) {
     $related_query = new WP_Query([
         'post_type'           => 'post',
-        'posts_per_page'      => 3,
+        'posts_per_page'      => 2,
         'post__not_in'        => [get_the_ID()],
         'ignore_sticky_posts' => true,
     ]);
@@ -27,14 +27,13 @@ if (! $related_query->have_posts()) {
 <?php if ($related_query->have_posts()) : ?>
     <section class="related-posts section-spacing" aria-labelledby="related-posts-title">
         <div class="site-container">
-            <div class="section-heading">
-                <p class="eyebrow"><?php esc_html_e('From the Blog', 'silver-peak-theme'); ?></p>
+            <div class="related-posts__header">
                 <h2 id="related-posts-title"><?php esc_html_e('More homeowner tips and practical updates', 'silver-peak-theme'); ?></h2>
             </div>
 
-            <div class="post-grid" role="list">
+            <div class="related-posts__grid" role="list">
                 <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
-                    <div role="listitem">
+                    <div class="related-posts__item" role="listitem">
                         <?php get_template_part('template-parts/components/post', 'card'); ?>
                     </div>
                 <?php endwhile; ?>
