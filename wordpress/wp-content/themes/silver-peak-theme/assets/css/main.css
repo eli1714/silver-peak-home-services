@@ -774,7 +774,7 @@ textarea:focus,
     font-size: 0.96rem;
 }
 
-@media (max-width: 47.99rem) {
+@media (max-width: 767px) {
     .site-footer__grid {
         gap: 1.4rem;
         margin-bottom: 1.4rem;
@@ -929,7 +929,8 @@ textarea:focus,
     content: "";
     position: absolute;
     left: 0;
-    top: 0.68rem;
+    top: 0.62em;
+    transform: translateY(-50%);
     width: 0.42rem;
     height: 0.42rem;
     border-radius: 50%;
@@ -999,27 +1000,79 @@ textarea:focus,
 }
 
 .home-hero {
-    padding-top: clamp(2.75rem, 7vw, 5rem);
+    padding-top: clamp(2.4rem, 6vw, 4.25rem);
+}
+
+.home-hero__content {
+    gap: 0.85rem;
 }
 
 .home-hero__content h1 {
-    max-width: 12ch;
+    max-width: 10.5ch;
+    font-size: clamp(2.6rem, 5.2vw, 4.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
 }
 
 .home-hero__lead {
-    max-width: 40rem;
-    font-size: var(--font-size-lead);
+    max-width: 34rem;
+    font-size: 1.05rem;
+    line-height: 1.68;
     color: var(--color-muted);
 }
 
+.home-hero__actions {
+    gap: 0.8rem;
+    margin-top: 0.15rem;
+}
+
+.home-hero__highlights {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    gap: 0.7rem 1.15rem;
+    margin-top: 0.2rem;
+}
+
+.home-hero__highlights li {
+    color: var(--color-heading);
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
 .home-hero__card {
+    width: min(100%, 29rem);
+    justify-self: end;
     background:
         linear-gradient(180deg, rgba(21, 94, 99, 0.06), rgba(21, 94, 99, 0.02)),
         var(--color-surface);
 }
 
+@media (max-width: 1023px) {
+    #home-hero-title,
+    .home-hero__lead,
+    .home-hero__card,
+    .home-hero__card h2 {
+        width: 100%;
+        max-width: none;
+    }
+
+    .home-hero__layout {
+        gap: 1.75rem;
+    }
+
+    .home-hero__highlights {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .home-hero__card {
+        justify-self: start;
+    }
+}
+
 .home-hero__card h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    max-width: 100%;
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+    line-height: 1.08;
 }
 
 .area-grid {
@@ -1271,7 +1324,37 @@ textarea:focus,
 }
 
 /* Responsive */
-@media (min-width: 48rem) {
+@media (min-width: 768px) and (max-width: 1023px) {
+    .home-hero__layout {
+        grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.9fr);
+        align-items: start;
+        gap: 1.75rem;
+    }
+
+    .home-hero__content h1 {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(2.45rem, 5vw, 3.6rem);
+    }
+
+    .home-hero__lead {
+        width: 100%;
+        max-width: none;
+    }
+
+    .home-hero__highlights {
+        grid-template-columns: repeat(2, minmax(0, max-content));
+        gap: 0.65rem 1rem;
+    }
+
+    .home-hero__card {
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+    }
+}
+
+@media (min-width: 768px) {
     .site-container {
         width: min(100% - 2rem, var(--container-width));
     }
@@ -1305,7 +1388,7 @@ textarea:focus,
     }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
     .nav-toggle {
         display: none;
     }
@@ -1370,8 +1453,9 @@ textarea:focus,
 
     .home-hero__layout,
     .split-section {
-        grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.95fr);
+        grid-template-columns: minmax(0, 1.2fr) minmax(19rem, 0.9fr);
         align-items: center;
+        gap: 2.25rem;
     }
 
     .service-page__hero-layout {
@@ -1646,7 +1730,7 @@ textarea:focus,
     background: rgba(255, 255, 255, 0.92);
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
     .post-grid--archive {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.4rem;
@@ -1657,7 +1741,7 @@ textarea:focus,
     }
 }
 
-@media (min-width: 70rem) {
+@media (min-width: 1120px) {
     .blog-featured__card {
         grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
         align-items: stretch;
@@ -1777,7 +1861,7 @@ textarea:focus,
     font-size: 0.88rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
     .related-posts__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.25rem;
@@ -1961,7 +2045,7 @@ textarea:focus,
     max-width: 30rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
     .single-post {
         padding-top: clamp(2.15rem, 3.6vw, 3rem);
     }
@@ -1971,7 +2055,7 @@ textarea:focus,
     }
 }
 
-@media (max-width: 47.99rem) {
+@media (max-width: 767px) {
     .single-post__header .post-meta {
         gap: 0.4rem 0.8rem;
         margin-top: 0.25rem;
