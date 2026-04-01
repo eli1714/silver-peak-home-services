@@ -835,6 +835,56 @@ textarea:focus,
     font-size: 1.3rem;
 }
 
+.service-card__header {
+    display: grid;
+    gap: 2rem;
+}
+
+.service-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background: rgba(227, 241, 241, 0.82);
+    color: var(--color-accent-dark);
+    box-shadow: inset 0 0 0 1px rgba(21, 94, 99, 0.08);
+    margin: 0 auto;
+}
+
+.service-card__icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.25rem;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    text-decoration: none;
+}
+
+.service-card__link-text {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.service-card__link::after {
+    content: "→";
+    font-size: 0.95em;
+    transition: transform var(--transition-fast);
+}
+
+.service-card__link:hover::after,
+.service-card__link:focus-visible::after {
+    transform: translateX(0.16rem);
+}
+
 .area-card {
     padding: 1rem 1.1rem;
     text-align: center;
