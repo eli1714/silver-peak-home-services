@@ -11,7 +11,9 @@
         <span class="nav-toggle__label"><?php esc_html_e('Menu', 'silver-peak-theme'); ?></span>
     </button>
 
-    <div id="primary-menu-panel" class="primary-nav-wrap">
+    <div class="nav-backdrop" hidden></div>
+
+    <div id="primary-menu-panel" class="primary-nav-wrap" hidden>
         <nav class="primary-nav" aria-label="<?php esc_attr_e('Primary navigation', 'silver-peak-theme'); ?>">
             <?php
             wp_nav_menu([

@@ -11,28 +11,74 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMobileNav() {
     const toggleButton = document.querySelector('.nav-toggle');
     const menuPanel = document.querySelector('#primary-menu-panel');
+    const backdrop = document.querySelector('.nav-backdrop');
 
     if (!toggleButton || !menuPanel) {
         return;
     }
 
     const desktopBreakpoint = window.matchMedia('(min-width: 64rem)');
+    const menuLinks = menuPanel.querySelectorAll('a');
+
+    const setExpanded = (expanded) => {
+        toggleButton.setAttribute('aria-expanded', String(expanded));
+
+        if (desktopBreakpoint.matches) {
+            menuPanel.hidden = false;
+
+            if (backdrop) {
+                backdrop.hidden = true;
+            }
+
+            return;
+        }
+
+        menuPanel.hidden = !expanded;
+
+        if (backdrop) {
+            backdrop.hidden = !expanded;
+        }
+    };
+
+    const closeMenu = ({ focusToggle = true } = {}) => {
+        if (desktopBreakpoint.matches) {
+            return;
+        }
+
+        setExpanded(false);
+
+        if (focusToggle) {
+            toggleButton.focus();
+        }
+    };
 
     const syncMenuState = () => {
         if (desktopBreakpoint.matches) {
-            menuPanel.hidden = false;
-            toggleButton.setAttribute('aria-expanded', 'true');
+            setExpanded(true);
             return;
         }
 
         const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        menuPanel.hidden = !isExpanded;
+        setExpanded(isExpanded);
     };
 
     toggleButton.addEventListener('click', () => {
         const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        toggleButton.setAttribute('aria-expanded', String(!isExpanded));
-        syncMenuState();
+        setExpanded(!isExpanded);
+    });
+
+    if (backdrop) {
+        backdrop.addEventListener('click', () => {
+            closeMenu();
+        });
+    }
+
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (!desktopBreakpoint.matches) {
+                closeMenu({ focusToggle: false });
+            }
+        });
     });
 
     document.addEventListener('keydown', (event) => {
@@ -44,12 +90,23 @@ function initMobileNav() {
             return;
         }
 
-        toggleButton.setAttribute('aria-expanded', 'false');
-        syncMenuState();
-        toggleButton.focus();
+        closeMenu();
+    });
+
+    document.addEventListener('click', (event) => {
+        if (desktopBreakpoint.matches || toggleButton.getAttribute('aria-expanded') !== 'true') {
+            return;
+        }
+
+        if (menuPanel.contains(event.target) || toggleButton.contains(event.target)) {
+            return;
+        }
+
+        closeMenu({ focusToggle: false });
     });
 
     desktopBreakpoint.addEventListener('change', syncMenuState);
+    setExpanded(false);
     syncMenuState();
 }
 
