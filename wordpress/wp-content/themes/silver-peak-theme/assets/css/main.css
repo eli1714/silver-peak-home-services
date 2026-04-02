@@ -907,12 +907,19 @@ textarea:focus,
     box-shadow: var(--shadow-soft);
 }
 
+.testimonial-grid--featured {
+    gap: 1rem;
+}
+
 .testimonial-card {
     margin: 0;
+    min-height: 100%;
+    padding: clamp(1.3rem, 2.4vw, 1.75rem);
 }
 
 .testimonial-card p {
-    font-size: 1.05rem;
+    font-size: 1.03rem;
+    line-height: 1.55;
 }
 
 .testimonial-card cite {
@@ -1388,6 +1395,15 @@ textarea:focus,
 
 /* Responsive */
 @media (min-width: 768px) and (max-width: 1023px) {
+    .testimonial-grid--featured {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .testimonial-grid--featured .testimonial-card:last-child {
+        grid-column: 1 / -1;
+    }
+
     .home-hero__layout {
         grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.9fr);
         align-items: start;
@@ -1555,7 +1571,6 @@ textarea:focus,
     }
 
     .service-grid,
-    .testimonial-grid,
     .process-list,
     .services-grid,
     .service-detail-grid,
@@ -1564,8 +1579,14 @@ textarea:focus,
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .testimonial-grid:not(.testimonial-grid--featured),
     .feature-list:not(.feature-list--trust) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .testimonial-grid--featured {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
     }
 
     .area-grid {
