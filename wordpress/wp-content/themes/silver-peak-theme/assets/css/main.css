@@ -814,7 +814,8 @@ textarea:focus,
 .service-detail-grid,
 .contact-info__grid,
 .post-grid,
-.faq-list {
+.faq-list,
+.process-list {
     display: grid;
     gap: var(--space-md);
 }
@@ -932,10 +933,13 @@ textarea:focus,
 
 .process-list {
     counter-reset: process-steps;
+    gap: 1rem;
 }
 
 .process-step {
     position: relative;
+    min-height: 100%;
+    padding: clamp(1.3rem, 2.5vw, 1.9rem);
 }
 
 .process-step::before {
@@ -946,7 +950,7 @@ textarea:focus,
     justify-content: center;
     width: 3rem;
     height: 3rem;
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
     border-radius: 50%;
     background-color: var(--color-accent-soft);
     color: var(--color-accent-dark);
@@ -1395,6 +1399,15 @@ textarea:focus,
 
 /* Responsive */
 @media (min-width: 768px) and (max-width: 1023px) {
+    .process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .process-list .process-step:last-child {
+        grid-column: 1 / -1;
+    }
+
     .testimonial-grid--featured {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: stretch;
@@ -1571,12 +1584,16 @@ textarea:focus,
     }
 
     .service-grid,
-    .process-list,
     .services-grid,
     .service-detail-grid,
     .contact-info__grid,
     .post-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .process-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
     }
 
     .testimonial-grid:not(.testimonial-grid--featured),
