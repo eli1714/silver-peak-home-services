@@ -37,6 +37,11 @@ build/
 /wordpress/wp-content/*
 !/wordpress/wp-content/themes/
 !/wordpress/wp-content/plugins/
+!/wordpress/wp-content/plugins/.gitkeep
+
+# Ignore third-party plugins so the repo stays focused on custom code.
+/wordpress/wp-content/plugins/*
+!/wordpress/wp-content/plugins/.gitkeep
 
 # Ignore generated content inside wp-content.
 /wordpress/wp-content/uploads/
