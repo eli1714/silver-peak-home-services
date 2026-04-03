@@ -498,6 +498,48 @@ textarea:focus,
     gap: var(--space-md);
 }
 
+.wpcf7 form,
+.quote-form-shell__plugin-content > * {
+    margin: 0;
+}
+
+.wpcf7 .quote-form-grid .form-field > p {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+}
+
+.wpcf7 .quote-form-grid .form-field br {
+    display: none;
+}
+
+.wpcf7 .wpcf7-form-control-wrap {
+    display: block;
+}
+
+.wpcf7 form > p {
+    margin: 0;
+}
+
+.wpcf7 .wpcf7-submit {
+    width: 100%;
+}
+
+.wpcf7 .wpcf7-spinner {
+    margin: 0.75rem 0 0;
+}
+
+.wpcf7 .wpcf7-not-valid-tip,
+.wpcf7 .wpcf7-response-output {
+    font-size: 0.95rem;
+}
+
+.wpcf7 .wpcf7-response-output {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-control);
+}
+
 .search-form {
     display: flex;
     gap: var(--space-xs);
