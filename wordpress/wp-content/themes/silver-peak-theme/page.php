@@ -3,7 +3,6 @@
  * Page template.
  *
  * Keeps the content area simple so it works well with the block editor
- * and page builders like Elementor on standard pages.
  *
  * @package SilverPeakTheme
  */
