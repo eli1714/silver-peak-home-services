@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
 <section class="contact-reassurance section-spacing" aria-labelledby="contact-reassurance-title">
     <div class="site-container">
@@ -16,7 +18,7 @@
 
             <div class="cta-panel__actions">
                 <a class="button button--primary" href="#request-a-quote"><?php esc_html_e('Start Your Request', 'silver-peak-theme'); ?></a>
-                <a class="button button--secondary" href="tel:5551234567"><?php esc_html_e('Call During Business Hours', 'silver-peak-theme'); ?></a>
+                <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php esc_html_e('Call During Business Hours', 'silver-peak-theme'); ?></a>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
         </div>
     </main>
@@ -31,8 +33,8 @@
                 <section class="site-footer__section" aria-labelledby="footer-contact-title">
                     <h2 id="footer-contact-title" class="site-footer__title"><?php esc_html_e('Contact', 'silver-peak-theme'); ?></h2>
                     <ul class="site-footer__list">
-                        <li><a href="tel:5551234567"><?php esc_html_e('(555) 123-4567', 'silver-peak-theme'); ?></a></li>
-                        <li><a href="mailto:hello@silverpeakdemo.com"><?php esc_html_e('hello@silverpeakdemo.com', 'silver-peak-theme'); ?></a></li>
+                        <li><a href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html($contact['phone_display']); ?></a></li>
+                        <li><a href="mailto:<?php echo esc_attr($contact['email']); ?>"><?php echo esc_html($contact['email']); ?></a></li>
                         <li><?php esc_html_e('Serving the greater Silver Peak area', 'silver-peak-theme'); ?></li>
                     </ul>
                 </section>

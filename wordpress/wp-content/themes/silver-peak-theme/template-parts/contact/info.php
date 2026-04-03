@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
 <section class="contact-info section-spacing" aria-labelledby="contact-info-title">
     <div class="site-container">
@@ -16,13 +18,13 @@
             <article class="contact-card" role="listitem">
                 <h3><?php esc_html_e('Phone', 'silver-peak-theme'); ?></h3>
                 <p><?php esc_html_e('Call for scheduling questions, repair requests, or project details.', 'silver-peak-theme'); ?></p>
-                <a href="tel:5551234567"><?php esc_html_e('(555) 123-4567', 'silver-peak-theme'); ?></a>
+                <a href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html($contact['phone_display']); ?></a>
             </article>
 
             <article class="contact-card" role="listitem">
                 <h3><?php esc_html_e('Email', 'silver-peak-theme'); ?></h3>
                 <p><?php esc_html_e('Prefer email? Send over the basics and we will follow up with next steps.', 'silver-peak-theme'); ?></p>
-                <a href="mailto:hello@silverpeakhomeservices.com"><?php esc_html_e('hello@silverpeakhomeservices.com', 'silver-peak-theme'); ?></a>
+                <a href="mailto:<?php echo esc_attr($contact['email']); ?>"><?php echo esc_html($contact['email']); ?></a>
             </article>
 
             <article class="contact-card" role="listitem">

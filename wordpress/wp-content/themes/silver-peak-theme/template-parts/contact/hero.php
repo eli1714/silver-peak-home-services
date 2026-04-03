@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
 <section class="contact-hero section-spacing" aria-labelledby="contact-page-title">
     <div class="site-container">
@@ -19,7 +21,7 @@
                 <p><?php esc_html_e('Send a quick project summary through the form below or call during business hours for immediate questions.', 'silver-peak-theme'); ?></p>
                 <div class="contact-hero__actions">
                     <a class="button button--primary" href="#request-a-quote"><?php esc_html_e('Request a Quote', 'silver-peak-theme'); ?></a>
-                    <a class="button button--secondary" href="tel:5551234567"><?php esc_html_e('Call (555) 123-4567', 'silver-peak-theme'); ?></a>
+                    <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html(sprintf(__('Call %s', 'silver-peak-theme'), $contact['phone_display'])); ?></a>
                 </div>
             </aside>
         </div>

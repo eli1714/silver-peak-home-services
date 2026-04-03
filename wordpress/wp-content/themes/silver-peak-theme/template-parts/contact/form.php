@@ -5,7 +5,10 @@
  * @package SilverPeakTheme
  */
 ?>
-<?php $form_content = trim((string) get_the_content()); ?>
+<?php
+$contact = silver_peak_theme_get_contact_details();
+$form_content = trim((string) get_the_content());
+?>
 <section id="request-a-quote" class="quote-request section-spacing" aria-labelledby="quote-request-title">
     <div class="site-container">
         <div class="quote-request__layout">
@@ -37,12 +40,12 @@
 
                             <div class="form-field">
                                 <label for="quote-phone"><?php esc_html_e('Phone Number', 'silver-peak-theme'); ?></label>
-                                <input id="quote-phone" name="quote-phone" type="tel" autocomplete="tel" placeholder="<?php esc_attr_e('(555) 123-4567', 'silver-peak-theme'); ?>">
+                                <input id="quote-phone" name="quote-phone" type="tel" autocomplete="tel" placeholder="<?php echo esc_attr($contact['phone_display']); ?>">
                             </div>
 
                             <div class="form-field">
                                 <label for="quote-email"><?php esc_html_e('Email Address', 'silver-peak-theme'); ?></label>
-                                <input id="quote-email" name="quote-email" type="email" autocomplete="email" placeholder="<?php esc_attr_e('you@example.com', 'silver-peak-theme'); ?>">
+                                <input id="quote-email" name="quote-email" type="email" autocomplete="email" placeholder="<?php echo esc_attr($contact['email']); ?>">
                             </div>
 
                             <div class="form-field">

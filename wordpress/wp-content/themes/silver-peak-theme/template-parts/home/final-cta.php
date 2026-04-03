@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
 <section class="home-section section-spacing" aria-labelledby="final-cta-title">
     <div class="site-container">
@@ -16,7 +18,7 @@
 
             <div class="cta-panel__actions">
                 <a class="button button--primary" href="<?php echo esc_url(home_url('/contact')); ?>"><?php esc_html_e('Request a Quote', 'silver-peak-theme'); ?></a>
-                <a class="button button--secondary" href="tel:5551234567"><?php esc_html_e('Call for Service', 'silver-peak-theme'); ?></a>
+                <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php esc_html_e('Call for Service', 'silver-peak-theme'); ?></a>
             </div>
         </div>
     </div>

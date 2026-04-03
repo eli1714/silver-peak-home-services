@@ -4,6 +4,8 @@
  *
  * @package SilverPeakTheme
  */
+
+$contact = silver_peak_theme_get_contact_details();
 ?>
 <section class="home-section home-hero section-spacing" aria-labelledby="home-hero-title">
     <div class="site-container">
@@ -15,7 +17,7 @@
 
                 <div class="home-hero__actions">
                     <a class="button button--primary" href="<?php echo esc_url(home_url('/contact')); ?>"><?php esc_html_e('Request a Quote', 'silver-peak-theme'); ?></a>
-                    <a class="button button--secondary" href="tel:5551234567"><?php esc_html_e('Call (555) 123-4567', 'silver-peak-theme'); ?></a>
+                    <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html(sprintf(__('Call %s', 'silver-peak-theme'), $contact['phone_display'])); ?></a>
                 </div>
 
                 <ul class="home-hero__highlights" aria-label="<?php esc_attr_e('Key service highlights', 'silver-peak-theme'); ?>">
@@ -30,9 +32,9 @@
                 <h2><?php esc_html_e('Book a home service consultation', 'silver-peak-theme'); ?></h2>
                 <p><?php esc_html_e('Tell us what you need, and we will follow up with the next available appointment window.', 'silver-peak-theme'); ?></p>
                 <ul class="contact-list">
-                    <li><strong><?php esc_html_e('Phone:', 'silver-peak-theme'); ?></strong> <a href="tel:5551234567"><?php esc_html_e('(555) 123-4567', 'silver-peak-theme'); ?></a></li>
-                    <li><strong><?php esc_html_e('Hours:', 'silver-peak-theme'); ?></strong> <?php esc_html_e('Mon-Sat, 7am-6pm', 'silver-peak-theme'); ?></li>
-                    <li><strong><?php esc_html_e('Service Area:', 'silver-peak-theme'); ?></strong> <?php esc_html_e('Las Vegas and nearby communities', 'silver-peak-theme'); ?></li>
+                    <li><strong><?php esc_html_e('Phone:', 'silver-peak-theme'); ?></strong> <a href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html($contact['phone_display']); ?></a></li>
+                    <li><strong><?php esc_html_e('Hours:', 'silver-peak-theme'); ?></strong> <?php echo esc_html($contact['hours']); ?></li>
+                    <li><strong><?php esc_html_e('Service Area:', 'silver-peak-theme'); ?></strong> <?php echo esc_html($contact['service_area']); ?></li>
                 </ul>
             </aside>
         </div>

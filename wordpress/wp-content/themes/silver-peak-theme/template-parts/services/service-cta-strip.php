@@ -6,6 +6,7 @@
  */
 
 $service_data = silver_peak_theme_get_service_page_data();
+$contact = silver_peak_theme_get_contact_details();
 $is_services_overview = is_page_template('template-services-overview.php');
 
 $cta_eyebrow = $is_services_overview
@@ -31,7 +32,7 @@ $cta_body = $is_services_overview
 
             <div class="cta-panel__actions">
                 <a class="button button--primary" href="<?php echo esc_url(home_url('/contact')); ?>"><?php esc_html_e('Request a Quote', 'silver-peak-theme'); ?></a>
-                <a class="button button--secondary" href="tel:5551234567"><?php esc_html_e('Call (555) 123-4567', 'silver-peak-theme'); ?></a>
+                <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html(sprintf(__('Call %s', 'silver-peak-theme'), $contact['phone_display'])); ?></a>
             </div>
         </div>
     </div>

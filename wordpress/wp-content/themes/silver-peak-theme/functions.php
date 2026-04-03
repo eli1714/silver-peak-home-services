@@ -80,6 +80,17 @@ function silver_peak_theme_posted_on(): string
     );
 }
 
+function silver_peak_theme_get_contact_details(): array
+{
+    return [
+        'phone_display' => '(555) 123-4567',
+        'phone_href'    => '5551234567',
+        'email'         => 'hello@silverpeakhomeservices.com',
+        'hours'         => __('Mon-Sat, 7am-6pm', 'silver-peak-theme'),
+        'service_area'  => __('Las Vegas and nearby communities', 'silver-peak-theme'),
+    ];
+}
+
 function silver_peak_theme_post_terms(string $taxonomy): string
 {
     $terms = get_the_terms(get_the_ID(), $taxonomy);
