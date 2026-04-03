@@ -8,7 +8,7 @@
 <section class="contact-hero section-spacing" aria-labelledby="contact-page-title">
     <div class="site-container">
         <div class="contact-hero__layout">
-            <div class="contact-hero__content page-intro">
+            <div class="contact-hero__content">
                 <p class="eyebrow"><?php esc_html_e('Contact Us', 'silver-peak-theme'); ?></p>
                 <h1 id="contact-page-title"><?php the_title(); ?></h1>
                 <p><?php esc_html_e('Tell us a little about the project, repair, or maintenance work you need help with. We will follow up with the next step, availability, and any details needed to move things forward.', 'silver-peak-theme'); ?></p>
