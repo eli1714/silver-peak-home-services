@@ -440,6 +440,7 @@ input[type="submit"]:focus-visible {
 /* Forms */
 form,
 .quote-form-placeholder,
+.quote-form-fallback,
 .quote-form-shell__plugin-content,
 .wpcf7,
 .wpforms-container {
@@ -538,6 +539,26 @@ textarea:focus,
     margin: 0;
     padding: 0.85rem 1rem;
     border-radius: var(--radius-control);
+}
+
+.quote-form-fallback {
+    align-content: start;
+}
+
+.quote-form-fallback h3 {
+    margin: 0;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.quote-form-fallback p {
+    margin: 0;
+    color: var(--color-muted);
+    line-height: 1.65;
+}
+
+.quote-form-fallback__actions {
+    display: grid;
+    gap: 0.9rem;
 }
 
 .search-form {

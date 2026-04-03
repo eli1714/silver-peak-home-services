@@ -29,43 +29,14 @@ $form_content = trim((string) get_the_content());
                         <?php the_content(); ?>
                     </div>
                 <?php else : ?>
-                    <form class="quote-form-placeholder" aria-labelledby="quote-form-placeholder-title">
-                        <h3 id="quote-form-placeholder-title"><?php esc_html_e('Request a Quote Form', 'silver-peak-theme'); ?></h3>
-
-                        <div class="quote-form-grid">
-                            <div class="form-field">
-                                <label for="quote-name"><?php esc_html_e('Full Name', 'silver-peak-theme'); ?></label>
-                                <input id="quote-name" name="quote-name" type="text" autocomplete="name" placeholder="<?php esc_attr_e('Your name', 'silver-peak-theme'); ?>">
-                            </div>
-
-                            <div class="form-field">
-                                <label for="quote-phone"><?php esc_html_e('Phone Number', 'silver-peak-theme'); ?></label>
-                                <input id="quote-phone" name="quote-phone" type="tel" autocomplete="tel" placeholder="<?php echo esc_attr($contact['phone_display']); ?>">
-                            </div>
-
-                            <div class="form-field">
-                                <label for="quote-email"><?php esc_html_e('Email Address', 'silver-peak-theme'); ?></label>
-                                <input id="quote-email" name="quote-email" type="email" autocomplete="email" placeholder="<?php echo esc_attr($contact['email']); ?>">
-                            </div>
-
-                            <div class="form-field">
-                                <label for="quote-service"><?php esc_html_e('Service Needed', 'silver-peak-theme'); ?></label>
-                                <select id="quote-service" name="quote-service">
-                                    <option><?php esc_html_e('Select a service', 'silver-peak-theme'); ?></option>
-                                    <option><?php esc_html_e('General Home Repairs', 'silver-peak-theme'); ?></option>
-                                    <option><?php esc_html_e('Seasonal Maintenance', 'silver-peak-theme'); ?></option>
-                                    <option><?php esc_html_e('Punch List Projects', 'silver-peak-theme'); ?></option>
-                                </select>
-                            </div>
-
-                            <div class="form-field form-field--full">
-                                <label for="quote-message"><?php esc_html_e('Project Details', 'silver-peak-theme'); ?></label>
-                                <textarea id="quote-message" name="quote-message" rows="6" placeholder="<?php esc_attr_e('Tell us about the work you need done, your timeline, and anything else that would help.', 'silver-peak-theme'); ?>"></textarea>
-                            </div>
+                    <div class="quote-form-fallback" aria-labelledby="quote-form-fallback-title">
+                        <h3 id="quote-form-fallback-title"><?php esc_html_e('Request a Quote', 'silver-peak-theme'); ?></h3>
+                        <p><?php esc_html_e('For the hosted demo, the quickest way to get started is to call or email with a short summary of the work you need.', 'silver-peak-theme'); ?></p>
+                        <div class="quote-form-fallback__actions">
+                            <a class="button button--primary" href="mailto:<?php echo esc_attr($contact['email']); ?>"><?php esc_html_e('Email Your Project Details', 'silver-peak-theme'); ?></a>
+                            <a class="button button--secondary" href="tel:<?php echo esc_attr($contact['phone_href']); ?>"><?php echo esc_html(sprintf(__('Call %s', 'silver-peak-theme'), $contact['phone_display'])); ?></a>
                         </div>
-
-                        <button class="button button--primary" type="button"><?php esc_html_e('Submit Request', 'silver-peak-theme'); ?></button>
-                    </form>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
