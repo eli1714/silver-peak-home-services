@@ -1178,12 +1178,84 @@ textarea:focus,
     background-color: var(--color-surface);
 }
 
+.services-overview-hero {
+    padding-top: clamp(1.8rem, 4vw, 2.85rem);
+}
+
 .services-overview-hero__content,
 .service-page__hero-content,
 .service-page__hero-card,
 .service-page__intro {
     display: grid;
     gap: var(--space-sm);
+}
+
+.services-overview-hero__content {
+    width: 100%;
+    padding: clamp(1.7rem, 3.2vw, 2.35rem);
+    border: 1px solid rgba(19, 32, 43, 0.08);
+    border-radius: var(--radius-card);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(251, 248, 243, 0.92));
+    box-shadow: var(--shadow-soft);
+}
+
+.services-overview-hero__content h1 {
+    max-width: 14ch;
+    font-size: clamp(2.35rem, 4.45vw, 4rem);
+    line-height: 0.99;
+    letter-spacing: -0.035em;
+}
+
+.services-overview-hero__lead {
+    max-width: 46rem;
+    font-size: var(--font-size-lead);
+    line-height: 1.62;
+    color: var(--color-muted);
+}
+
+.service-summary-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.25rem;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    text-decoration: none;
+}
+
+.service-summary-card__link-text {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.service-summary-card__link::after {
+    content: "→";
+    font-size: 0.95em;
+    transition: transform var(--transition-fast);
+}
+
+.service-summary-card__link:hover::after,
+.service-summary-card__link:focus-visible::after {
+    transform: translateX(0.16rem);
+}
+
+.service-area-note--overview {
+    width: min(100%, 52rem);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.service-area-note--overview .eyebrow {
+    margin-inline: auto;
+}
+
+.cta-panel--services-overview {
+    gap: 1.2rem;
+}
+
+.cta-panel--services-overview .cta-panel__content {
+    max-width: 38rem;
 }
 
 .service-summary-card h3,
@@ -1414,6 +1486,20 @@ textarea:focus,
 
 /* Responsive */
 @media (max-width: 767px) {
+    .services-overview-hero__content {
+        padding: 1.4rem 1.25rem 1.5rem;
+    }
+
+    .services-overview-hero__content h1 {
+        max-width: 10ch;
+        font-size: clamp(2.15rem, 8.4vw, 3.35rem);
+    }
+
+    .services-overview-hero__lead {
+        font-size: 1rem;
+        line-height: 1.58;
+    }
+
     .faq-item summary {
         gap: 0.8rem;
         min-height: 4rem;

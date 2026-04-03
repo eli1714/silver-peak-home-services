@@ -16,19 +16,19 @@
             <article class="service-summary-card">
                 <h3><?php esc_html_e('General Home Repairs', 'silver-peak-theme'); ?></h3>
                 <p><?php esc_html_e('Ideal for drywall touchups, trim repairs, hardware swaps, caulking, and the smaller fixes that keep adding up.', 'silver-peak-theme'); ?></p>
-                <a href="<?php echo esc_url(home_url('/services/general-home-repairs')); ?>"><?php esc_html_e('View service details', 'silver-peak-theme'); ?></a>
+                <a class="service-summary-card__link" href="<?php echo esc_url(home_url('/services/general-home-repairs')); ?>"><span class="service-summary-card__link-text"><?php esc_html_e('View service details', 'silver-peak-theme'); ?></span></a>
             </article>
 
             <article class="service-summary-card">
                 <h3><?php esc_html_e('Seasonal Maintenance', 'silver-peak-theme'); ?></h3>
                 <p><?php esc_html_e('Preventive maintenance for busy homeowners who want to stay ahead of wear, weather, and avoidable repairs.', 'silver-peak-theme'); ?></p>
-                <a href="<?php echo esc_url(home_url('/services/seasonal-maintenance')); ?>"><?php esc_html_e('Explore maintenance service', 'silver-peak-theme'); ?></a>
+                <a class="service-summary-card__link" href="<?php echo esc_url(home_url('/services/seasonal-maintenance')); ?>"><span class="service-summary-card__link-text"><?php esc_html_e('Explore maintenance service', 'silver-peak-theme'); ?></span></a>
             </article>
 
             <article class="service-summary-card">
                 <h3><?php esc_html_e('Move-In and Punch List Work', 'silver-peak-theme'); ?></h3>
                 <p><?php esc_html_e('Perfect for getting a new home ready, tackling pre-sale fixes, or finally clearing a backlog of unfinished items.', 'silver-peak-theme'); ?></p>
-                <a href="<?php echo esc_url(home_url('/services/punch-list-projects')); ?>"><?php esc_html_e('See project support', 'silver-peak-theme'); ?></a>
+                <a class="service-summary-card__link" href="<?php echo esc_url(home_url('/services/punch-list-projects')); ?>"><span class="service-summary-card__link-text"><?php esc_html_e('See project support', 'silver-peak-theme'); ?></span></a>
             </article>
         </div>
     </div>
