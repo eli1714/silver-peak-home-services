@@ -17,7 +17,7 @@ function initMobileNav() {
         return;
     }
 
-    const desktopBreakpoint = window.matchMedia('(min-width: 64rem)');
+    const desktopBreakpoint = window.matchMedia('(min-width: 1024px)');
     const menuLinks = menuPanel.querySelectorAll('a');
 
     const setExpanded = (expanded) => {

@@ -73,17 +73,10 @@ add_filter('body_class', 'silver_peak_theme_body_classes');
 
 function silver_peak_theme_posted_on(): string
 {
-    $published = get_the_date();
-    $published_iso = get_the_date('c');
-    $author_url = get_author_posts_url((int) get_the_author_meta('ID'));
-    $author_name = get_the_author();
-
     return sprintf(
-        '<span class="post-meta__item"><time datetime="%1$s">%2$s</time></span><span class="post-meta__item"><a href="%3$s">%4$s</a></span>',
-        esc_attr($published_iso),
-        esc_html($published),
-        esc_url($author_url),
-        esc_html($author_name)
+        '<span class="post-meta__item"><time datetime="%1$s">%2$s</time></span>',
+        esc_attr(get_the_date('c')),
+        esc_html(get_the_date())
     );
 }
 
