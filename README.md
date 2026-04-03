@@ -1,12 +1,28 @@
 # Silver Peak Home Services
 
-Portfolio-ready custom WordPress project for a local business website. This repository is set up for local development with Lando and Git, with WordPress intended to live in `wordpress/` and custom project work tracked separately from core files.
+Custom WordPress project for a fictional local home services company.
 
-## Project Overview
+This repo is mainly here to track the custom theme work. The site includes a custom homepage, services pages, blog templates, and a contact flow built to work with Contact Form 7.
 
-Silver Peak Home Services is a custom WordPress build intended to showcase a practical small-business website workflow. The goal is to keep the repository focused on project code, local development setup, and the custom theme rather than generated files or WordPress core.
+## What’s in the project
 
-## Project Structure
+- custom homepage templates and sections
+- services overview page
+- reusable service detail template
+- contact page with a quote request layout
+- blog archive and single post templates
+- responsive navigation and basic front-end interactions
+
+## Stack
+
+- WordPress
+- PHP
+- custom theme templates
+- custom CSS
+- vanilla JavaScript
+- Lando for local development
+
+## Project structure
 
 ```text
 silver-peak-home-services/
@@ -14,107 +30,100 @@ silver-peak-home-services/
 ├── .gitignore
 ├── README.md
 └── wordpress/
+    └── wp-content/
+        ├── plugins/
+        └── themes/
+            └── silver-peak-theme/
 ```
 
-## Local Setup
+The custom theme lives in:
+
+`wordpress/wp-content/themes/silver-peak-theme/`
+
+## Local development
 
 ### Requirements
 
-- [Docker](https://www.docker.com/)
+- Docker
 - [Lando](https://lando.dev/)
 - Git
 
-### Initial Setup
+### Setup
 
 1. Clone the repository.
-2. Add a WordPress install inside the `wordpress/` directory.
-3. From the project root, start Lando:
+2. Make sure WordPress is available inside `wordpress/`.
+3. Start the environment:
 
 ```bash
 lando start
 ```
 
-4. Open the local site URL provided by Lando.
-5. Complete the standard WordPress setup in the browser if needed.
-
-## Starting with Lando
-
-This project uses a simple Lando configuration for local WordPress development.
-
-- Start the environment:
-
-```bash
-lando start
-```
-
-- Stop the environment:
-
-```bash
-lando stop
-```
-
-- Get project info and local URLs:
+4. Check the local URLs:
 
 ```bash
 lando info
 ```
 
-- Run WP-CLI commands:
+5. If you’re using a fresh database, log into WordPress and assign the page templates as needed.
+
+### Useful commands
+
+Start:
+
+```bash
+lando start
+```
+
+Stop:
+
+```bash
+lando stop
+```
+
+Project info:
+
+```bash
+lando info
+```
+
+WP-CLI:
 
 ```bash
 lando wp plugin list
 ```
 
-## Development Notes
+## Plugin setup
 
-- WordPress core lives in `wordpress/`
-- Custom theme development will happen in `wordpress/wp-content/themes/`
-- The Git history is meant to reflect custom project work, not generated uploads, cache files, WordPress core updates, or third-party plugin code
-
-## Required Plugin Setup
-
-This theme currently expects one plugin for the contact workflow:
+The contact page is set up to work with:
 
 - [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 
-Plugin code is intentionally not versioned in this repository. The goal is to keep the project focused on custom theme work and make it easier to explain in a portfolio review.
+Third-party plugin code is not versioned in this repo. The goal is to keep the repository focused on the custom theme and project-specific work.
 
-### Contact Form 7 Setup
+### Contact Form 7
 
 1. Install and activate Contact Form 7.
-2. Create a form titled `Request a Quote`.
-3. Add fields for:
+2. Create a form called `Request a Quote`.
+3. Add these fields:
    - Full Name
    - Phone Number
    - Email Address
    - Service Needed
    - Project Details
-4. Paste the form shortcode into the content area of the `Contact` page.
+4. Paste the shortcode into the `Contact` page content.
 
-The contact template includes fallback placeholder markup if Contact Form 7 is not active or no shortcode has been added yet, so the layout still renders cleanly during development.
+The contact template includes fallback form markup, so the page layout still works even before the plugin is configured.
 
-### Mail Delivery Note
+## Mail setup
 
-Contact Form 7 handles the form UI, but reliable email delivery usually requires SMTP or a transactional mail service on the final host. For a real deployment, configure mail delivery separately instead of relying on default PHP mail behavior.
+For a real hosted version, the form should not rely on default PHP mail.
 
-## Basic Git Workflow
+The simplest setup is:
 
-```bash
-git status
-git add .
-git commit -m "Add initial project setup"
-```
+- Contact Form 7
+- WP Mail SMTP
+- a provider like Brevo
 
-Suggested workflow:
+## Notes
 
-1. Create or update a feature branch.
-2. Make focused changes.
-3. Commit with clear, descriptive messages.
-4. Push to GitHub regularly.
-
-## Features
-
-- Custom homepage, services, contact, and blog templates
-- Reusable service-detail page structure
-- Responsive, custom-coded theme styles and lightweight JS enhancements
-- Contact page layout ready for Contact Form 7 integration
+This project is meant to show custom WordPress theme work. The focus is on practical template structure, responsive front-end work, and a believable small-business site setup.
