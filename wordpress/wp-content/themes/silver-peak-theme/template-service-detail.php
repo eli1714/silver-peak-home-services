@@ -8,7 +8,10 @@
 get_header();
 ?>
 <?php while (have_posts()) : the_post(); ?>
-    <?php $service_data = silver_peak_theme_get_service_page_data(); ?>
+    <?php
+    $service_data = silver_peak_theme_get_service_page_data();
+    $should_render_intro = trim((string) get_the_content()) !== '';
+    ?>
     <section class="service-page-hero section-spacing" aria-labelledby="service-page-title">
         <div class="site-container">
             <article id="post-<?php the_ID(); ?>" <?php post_class('service-page service-page--hero'); ?>>
@@ -26,9 +29,11 @@ get_header();
                     </aside>
                 </div>
 
-                <div class="service-page__intro">
-                    <?php the_content(); ?>
-                </div>
+                <?php if ($should_render_intro) : ?>
+                    <div class="service-page__intro">
+                        <?php the_content(); ?>
+                    </div>
+                <?php endif; ?>
             </article>
         </div>
     </section>

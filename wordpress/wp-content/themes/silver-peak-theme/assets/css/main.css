@@ -965,9 +965,28 @@ textarea:focus,
 }
 
 .faq-item summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-height: 4.4rem;
+    padding: 1.05rem 1.2rem;
     cursor: pointer;
     font-weight: 700;
     color: var(--color-heading);
+    list-style: none;
+    transition: color 180ms ease, background-color 220ms ease;
+}
+
+.faq-item summary::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0.72rem;
+    height: 0.72rem;
+    border-right: 2px solid var(--color-accent-dark);
+    border-bottom: 2px solid var(--color-accent-dark);
+    transform: rotate(-45deg);
+    transition: transform 220ms ease;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -976,6 +995,14 @@ textarea:focus,
 
 .faq-item[open] {
     border-color: rgba(21, 94, 99, 0.28);
+}
+
+.faq-item[open] summary {
+    background-color: rgba(227, 241, 241, 0.18);
+}
+
+.faq-item[open] summary::before {
+    transform: rotate(45deg);
 }
 
 .faq-item p {
@@ -1240,6 +1267,16 @@ textarea:focus,
     transform: translateX(0.16rem);
 }
 
+.service-area-note {
+    width: min(100%, 50rem);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.service-area-note .eyebrow {
+    margin-inline: auto;
+}
+
 .service-area-note--overview {
     width: min(100%, 52rem);
     margin-inline: auto;
@@ -1269,14 +1306,41 @@ textarea:focus,
 }
 
 .service-page__hero-content h1 {
-    font-size: clamp(2.25rem, 6vw, 4rem);
-    max-width: 12ch;
+    font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+    max-width: 10.5ch;
+    line-height: 0.99;
+    letter-spacing: -0.035em;
 }
 
 .service-page__hero-lead {
-    max-width: 42rem;
+    max-width: 38rem;
     font-size: var(--font-size-lead);
+    line-height: 1.6;
     color: var(--color-muted);
+}
+
+.service-page__hero-card {
+    align-content: start;
+    gap: 0.95rem;
+    justify-self: start;
+    width: min(100%, 24rem);
+}
+
+.service-page__hero-card h2 {
+    margin: 0;
+    max-width: 12ch;
+    font-size: clamp(1.55rem, 2vw, 2.15rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.service-page__hero-card p {
+    max-width: 22rem;
+}
+
+.service-page__hero-card .button {
+    justify-self: start;
+    min-width: 11.25rem;
 }
 
 .service-page__intro {
@@ -1513,6 +1577,35 @@ textarea:focus,
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+    .service-page__hero-layout {
+        grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+        align-items: start;
+        gap: 1.9rem;
+    }
+
+    .service-page__hero-content h1 {
+        max-width: 9.5ch;
+        font-size: clamp(2.35rem, 5vw, 3.3rem);
+    }
+
+    .service-page__hero-lead {
+        max-width: 32rem;
+    }
+
+    .service-page__hero-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .service-page__hero-card h2 {
+        max-width: 11ch;
+        font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+    }
+
+    .service-detail-grid .service-detail-card:last-child {
+        grid-column: 1 / -1;
+    }
+
     .process-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: stretch;
