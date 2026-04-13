@@ -28,6 +28,12 @@ This project focuses on building a practical, production-style WordPress theme w
 - Simulating a real client workflow (services, blog, contact flow)
 - Keeping the repo focused on custom theme work (not WordPress core)
 
+## Custom Theme Location
+
+All custom development work lives here:
+
+wordpress/wp-content/themes/silver-peak-theme/
+
 ## Project structure
 
 ```text
